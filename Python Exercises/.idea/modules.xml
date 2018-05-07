@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../../Python-Projects/Math318HW/.idea/Math318HW.iml" filepath="$PROJECT_DIR$/../../../Python-Projects/Math318HW/.idea/Math318HW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Physics-and-Math-Projects/Python Assignments/.idea/Phys350HW.iml" filepath="$PROJECT_DIR$/../../../Physics-and-Math-Projects/Python Assignments/.idea/Phys350HW.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Python Exercises.iml" filepath="$PROJECT_DIR$/.idea/Python Exercises.iml" />
+    </modules>
+  </component>
+</project>
