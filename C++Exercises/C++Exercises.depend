@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1525807394 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\main.cpp
+	<cmath>
+	<cstdio>
+	<vector>
+	<iostream>
+	<algorithm>
+	"functions.h"
+
+1525747445 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\solvemefirst.c
+	"solveMeFirst.h"
+
+1525811655 c:\users\wongb\documents\github\hackerrankprojects\c++exercises\functions.h
+
+1525748386 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\basic_functions.cpp
+	"functions.h"
+
+1525805993 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\input_output.cpp
+	"functions.h"
+	<iostream>
+
+1525811305 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\format_specifiers.cpp
+	<iostream>
+	<cstdio>
+	"functions.h"
+
+1525811725 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\conditionals.cpp
+	"functions.h"
+	<iostream>
+
