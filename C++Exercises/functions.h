@@ -8,3 +8,4 @@ void format_specifiers();
 
 void conditionals();
 
+void forLoop();

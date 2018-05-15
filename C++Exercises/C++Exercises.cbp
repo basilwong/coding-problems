@@ -33,6 +33,7 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="basic_functions.cpp" />
+		<Unit filename="forLoop.cpp" />
 		<Unit filename="format_specifiers.cpp" />
 		<Unit filename="functions.h" />
 		<Unit filename="input_output.cpp" />
