@@ -38,6 +38,7 @@
 		<Unit filename="functions.h" />
 		<Unit filename="input_output.cpp" />
 		<Unit filename="main.cpp" />
+		<Unit filename="max_of_four.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
