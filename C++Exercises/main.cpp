@@ -8,10 +8,12 @@
 using namespace std;
 
 int main() {
-    int a, b, c, d;
-    scanf("%d %d %d %d", &a, &b, &c, &d);
-    int ans = max_of_four(a, b, c, d);
-    printf("%d", ans);
+    int a, b;
+    int *pa = &a, *pb = &b;
+
+    scanf("%d %d", &a, &b);
+    pointers(pa, pb);
+    printf("%d\n%d", a, b);
 
     return 0;
 }

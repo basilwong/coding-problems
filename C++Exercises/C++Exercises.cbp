@@ -39,6 +39,7 @@
 		<Unit filename="input_output.cpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="max_of_four.cpp" />
+		<Unit filename="pointers.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

@@ -10,7 +10,7 @@
 1525747445 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\solvemefirst.c
 	"solveMeFirst.h"
 
-1526420091 c:\users\wongb\documents\github\hackerrankprojects\c++exercises\functions.h
+1526422874 c:\users\wongb\documents\github\hackerrankprojects\c++exercises\functions.h
 
 1525748386 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\basic_functions.cpp
 	"functions.h"
@@ -31,4 +31,9 @@
 1526342540 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\forloop.cpp
 	<iostream>
 	<cstdio>
+
+1526420154 source:c:\users\wongb\documents\github\hackerrankprojects\c++exercises\max_of_four.cpp
+	<iostream>
+	<cstdio>
+	"functions.h"
 
