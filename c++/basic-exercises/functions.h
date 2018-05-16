@@ -1,4 +1,4 @@
-
+// Contains all the functions for the basic excersises.
 
 int solveMeFirst(int a, int b);
 
@@ -13,3 +13,5 @@ void forLoop();
 int max_of_four(int a, int b, int c, int d);
 
 void pointers(int *a, int *b);
+
+void array_basic();
