@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/main.cpp
+iostream
+-
+vector_sort.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_sort.h
+vector_erase.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.h
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.cpp
+vector_erase.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.h
+vector
+-
+iostream
+-
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.h
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_sort.cpp
+vector_sort.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_sort.h
+iostream
+-
+algorithm
+-
+vector
+-
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_sort.h
+

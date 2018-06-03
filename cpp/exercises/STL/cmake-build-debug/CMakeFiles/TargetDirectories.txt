@@ -1,0 +1,3 @@
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/cmake-build-debug/CMakeFiles/STL.dir
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
