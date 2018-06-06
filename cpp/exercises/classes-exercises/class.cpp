@@ -1,6 +1,11 @@
+#include "headerc.h"
 #include <iostream>
 #include <sstream>
 using namespace std;
+
+void print_h() {
+  cout << "hello world1";
+}
 
 class Student {
   private:
