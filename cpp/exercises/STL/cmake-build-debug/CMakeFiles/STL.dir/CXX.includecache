@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/lower_bound.cpp
+lower_bound.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/lower_bound.h
+cmath
+-
+cstdio
+-
+vector
+-
+iostream
+-
+algorithm
+-
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/lower_bound.h
+
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/main.cpp
 iostream
 -
@@ -13,6 +29,30 @@ vector_sort.h
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_sort.h
 vector_erase.h
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.h
+lower_bound.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/lower_bound.h
+maps.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.h
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.cpp
+maps.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.h
+cmath
+-
+cstdio
+-
+vector
+-
+iostream
+-
+set
+-
+map
+-
+algorithm
+-
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.h
 
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.cpp
 vector_erase.h

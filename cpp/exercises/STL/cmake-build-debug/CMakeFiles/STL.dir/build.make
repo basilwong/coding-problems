@@ -59,15 +59,15 @@ include CMakeFiles/STL.dir/flags.make
 CMakeFiles/STL.dir/main.cpp.obj: CMakeFiles/STL.dir/flags.make
 CMakeFiles/STL.dir/main.cpp.obj: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/STL.dir/main.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\main.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\main.cpp
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\main.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\main.cpp
 
 CMakeFiles/STL.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STL.dir/main.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\main.cpp > CMakeFiles\STL.dir\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\main.cpp > CMakeFiles\STL.dir\main.cpp.i
 
 CMakeFiles/STL.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STL.dir/main.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\main.cpp -o CMakeFiles\STL.dir\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\main.cpp -o CMakeFiles\STL.dir\main.cpp.s
 
 CMakeFiles/STL.dir/main.cpp.obj.requires:
 
@@ -83,15 +83,15 @@ CMakeFiles/STL.dir/main.cpp.obj.provides.build: CMakeFiles/STL.dir/main.cpp.obj
 CMakeFiles/STL.dir/vector_sort.cpp.obj: CMakeFiles/STL.dir/flags.make
 CMakeFiles/STL.dir/vector_sort.cpp.obj: ../vector_sort.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/STL.dir/vector_sort.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\vector_sort.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_sort.cpp
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\vector_sort.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_sort.cpp
 
 CMakeFiles/STL.dir/vector_sort.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STL.dir/vector_sort.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_sort.cpp > CMakeFiles\STL.dir\vector_sort.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_sort.cpp > CMakeFiles\STL.dir\vector_sort.cpp.i
 
 CMakeFiles/STL.dir/vector_sort.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STL.dir/vector_sort.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_sort.cpp -o CMakeFiles\STL.dir\vector_sort.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_sort.cpp -o CMakeFiles\STL.dir\vector_sort.cpp.s
 
 CMakeFiles/STL.dir/vector_sort.cpp.obj.requires:
 
@@ -107,15 +107,15 @@ CMakeFiles/STL.dir/vector_sort.cpp.obj.provides.build: CMakeFiles/STL.dir/vector
 CMakeFiles/STL.dir/vector_erase.cpp.obj: CMakeFiles/STL.dir/flags.make
 CMakeFiles/STL.dir/vector_erase.cpp.obj: ../vector_erase.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/STL.dir/vector_erase.cpp.obj"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\vector_erase.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_erase.cpp
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\vector_erase.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_erase.cpp
 
 CMakeFiles/STL.dir/vector_erase.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STL.dir/vector_erase.cpp.i"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_erase.cpp > CMakeFiles\STL.dir\vector_erase.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_erase.cpp > CMakeFiles\STL.dir\vector_erase.cpp.i
 
 CMakeFiles/STL.dir/vector_erase.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STL.dir/vector_erase.cpp.s"
-	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_erase.cpp -o CMakeFiles\STL.dir\vector_erase.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\vector_erase.cpp -o CMakeFiles\STL.dir\vector_erase.cpp.s
 
 CMakeFiles/STL.dir/vector_erase.cpp.obj.requires:
 
@@ -128,11 +128,61 @@ CMakeFiles/STL.dir/vector_erase.cpp.obj.provides: CMakeFiles/STL.dir/vector_eras
 CMakeFiles/STL.dir/vector_erase.cpp.obj.provides.build: CMakeFiles/STL.dir/vector_erase.cpp.obj
 
 
+CMakeFiles/STL.dir/lower_bound.cpp.obj: CMakeFiles/STL.dir/flags.make
+CMakeFiles/STL.dir/lower_bound.cpp.obj: ../lower_bound.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/STL.dir/lower_bound.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\lower_bound.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\lower_bound.cpp
+
+CMakeFiles/STL.dir/lower_bound.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STL.dir/lower_bound.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\lower_bound.cpp > CMakeFiles\STL.dir\lower_bound.cpp.i
+
+CMakeFiles/STL.dir/lower_bound.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STL.dir/lower_bound.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\lower_bound.cpp -o CMakeFiles\STL.dir\lower_bound.cpp.s
+
+CMakeFiles/STL.dir/lower_bound.cpp.obj.requires:
+
+.PHONY : CMakeFiles/STL.dir/lower_bound.cpp.obj.requires
+
+CMakeFiles/STL.dir/lower_bound.cpp.obj.provides: CMakeFiles/STL.dir/lower_bound.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\STL.dir\build.make CMakeFiles/STL.dir/lower_bound.cpp.obj.provides.build
+.PHONY : CMakeFiles/STL.dir/lower_bound.cpp.obj.provides
+
+CMakeFiles/STL.dir/lower_bound.cpp.obj.provides.build: CMakeFiles/STL.dir/lower_bound.cpp.obj
+
+
+CMakeFiles/STL.dir/maps.cpp.obj: CMakeFiles/STL.dir/flags.make
+CMakeFiles/STL.dir/maps.cpp.obj: ../maps.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/STL.dir/maps.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\STL.dir\maps.cpp.obj -c C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\maps.cpp
+
+CMakeFiles/STL.dir/maps.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/STL.dir/maps.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\maps.cpp > CMakeFiles\STL.dir\maps.cpp.i
+
+CMakeFiles/STL.dir/maps.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/STL.dir/maps.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\maps.cpp -o CMakeFiles\STL.dir\maps.cpp.s
+
+CMakeFiles/STL.dir/maps.cpp.obj.requires:
+
+.PHONY : CMakeFiles/STL.dir/maps.cpp.obj.requires
+
+CMakeFiles/STL.dir/maps.cpp.obj.provides: CMakeFiles/STL.dir/maps.cpp.obj.requires
+	$(MAKE) -f CMakeFiles\STL.dir\build.make CMakeFiles/STL.dir/maps.cpp.obj.provides.build
+.PHONY : CMakeFiles/STL.dir/maps.cpp.obj.provides
+
+CMakeFiles/STL.dir/maps.cpp.obj.provides.build: CMakeFiles/STL.dir/maps.cpp.obj
+
+
 # Object files for target STL
 STL_OBJECTS = \
 "CMakeFiles/STL.dir/main.cpp.obj" \
 "CMakeFiles/STL.dir/vector_sort.cpp.obj" \
-"CMakeFiles/STL.dir/vector_erase.cpp.obj"
+"CMakeFiles/STL.dir/vector_erase.cpp.obj" \
+"CMakeFiles/STL.dir/lower_bound.cpp.obj" \
+"CMakeFiles/STL.dir/maps.cpp.obj"
 
 # External object files for target STL
 STL_EXTERNAL_OBJECTS =
@@ -140,11 +190,13 @@ STL_EXTERNAL_OBJECTS =
 STL.exe: CMakeFiles/STL.dir/main.cpp.obj
 STL.exe: CMakeFiles/STL.dir/vector_sort.cpp.obj
 STL.exe: CMakeFiles/STL.dir/vector_erase.cpp.obj
+STL.exe: CMakeFiles/STL.dir/lower_bound.cpp.obj
+STL.exe: CMakeFiles/STL.dir/maps.cpp.obj
 STL.exe: CMakeFiles/STL.dir/build.make
 STL.exe: CMakeFiles/STL.dir/linklibs.rsp
 STL.exe: CMakeFiles/STL.dir/objects1.rsp
 STL.exe: CMakeFiles/STL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable STL.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\wongb\Documents\GitHub\hacker-rank\cpp\exercises\STL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable STL.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\STL.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -155,6 +207,8 @@ CMakeFiles/STL.dir/build: STL.exe
 CMakeFiles/STL.dir/requires: CMakeFiles/STL.dir/main.cpp.obj.requires
 CMakeFiles/STL.dir/requires: CMakeFiles/STL.dir/vector_sort.cpp.obj.requires
 CMakeFiles/STL.dir/requires: CMakeFiles/STL.dir/vector_erase.cpp.obj.requires
+CMakeFiles/STL.dir/requires: CMakeFiles/STL.dir/lower_bound.cpp.obj.requires
+CMakeFiles/STL.dir/requires: CMakeFiles/STL.dir/maps.cpp.obj.requires
 
 .PHONY : CMakeFiles/STL.dir/requires
 
