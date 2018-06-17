@@ -203,6 +203,33 @@ maps.cpp.s:
 	$(MAKE) -f CMakeFiles\STL.dir\build.make CMakeFiles/STL.dir/maps.cpp.s
 .PHONY : maps.cpp.s
 
+sets.obj: sets.cpp.obj
+
+.PHONY : sets.obj
+
+# target to build an object file
+sets.cpp.obj:
+	$(MAKE) -f CMakeFiles\STL.dir\build.make CMakeFiles/STL.dir/sets.cpp.obj
+.PHONY : sets.cpp.obj
+
+sets.i: sets.cpp.i
+
+.PHONY : sets.i
+
+# target to preprocess a source file
+sets.cpp.i:
+	$(MAKE) -f CMakeFiles\STL.dir\build.make CMakeFiles/STL.dir/sets.cpp.i
+.PHONY : sets.cpp.i
+
+sets.s: sets.cpp.s
+
+.PHONY : sets.s
+
+# target to generate assembly for a file
+sets.cpp.s:
+	$(MAKE) -f CMakeFiles\STL.dir\build.make CMakeFiles/STL.dir/sets.cpp.s
+.PHONY : sets.cpp.s
+
 vector_erase.obj: vector_erase.cpp.obj
 
 .PHONY : vector_erase.obj
@@ -275,6 +302,9 @@ help:
 	@echo ... maps.obj
 	@echo ... maps.i
 	@echo ... maps.s
+	@echo ... sets.obj
+	@echo ... sets.i
+	@echo ... sets.s
 	@echo ... vector_erase.obj
 	@echo ... vector_erase.i
 	@echo ... vector_erase.s

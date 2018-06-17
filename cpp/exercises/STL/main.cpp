@@ -3,8 +3,9 @@
 #include "vector_erase.h"
 #include "lower_bound.h"
 #include "maps.h"
+#include "sets.h"
 
 int main() {
-    maps();
+    sets();
     return 0;
 }

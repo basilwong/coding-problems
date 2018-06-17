@@ -95,6 +95,12 @@
 		<Unit filename="C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.h">
 			<Option target="STL"/>
 		</Unit>
+		<Unit filename="C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/sets.cpp">
+			<Option target="STL"/>
+		</Unit>
+		<Unit filename="C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/sets.h">
+			<Option target="STL"/>
+		</Unit>
 		<Unit filename="C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.cpp">
 			<Option target="STL"/>
 		</Unit>

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/STL.dir/vector_erase.cpp.obj"
   "CMakeFiles/STL.dir/lower_bound.cpp.obj"
   "CMakeFiles/STL.dir/maps.cpp.obj"
+  "CMakeFiles/STL.dir/sets.cpp.obj"
   "STL.pdb"
   "STL.exe"
   "STL.exe.manifest"

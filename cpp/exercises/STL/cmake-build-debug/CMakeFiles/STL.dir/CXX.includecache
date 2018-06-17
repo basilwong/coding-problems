@@ -33,6 +33,8 @@ lower_bound.h
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/lower_bound.h
 maps.h
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.h
+sets.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/sets.h
 
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.cpp
 maps.h
@@ -53,6 +55,24 @@ algorithm
 -
 
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/maps.h
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/sets.cpp
+sets.h
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/sets.h
+cmath
+-
+cstdio
+-
+vector
+-
+iostream
+-
+set
+-
+algorithm
+-
+
+C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/sets.h
 
 C:/Users/wongb/Documents/GitHub/hacker-rank/cpp/exercises/STL/vector_erase.cpp
 vector_erase.h

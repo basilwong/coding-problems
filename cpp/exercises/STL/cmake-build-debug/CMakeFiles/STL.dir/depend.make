@@ -7,11 +7,15 @@ CMakeFiles/STL.dir/lower_bound.cpp.obj: ../lower_bound.h
 CMakeFiles/STL.dir/main.cpp.obj: ../lower_bound.h
 CMakeFiles/STL.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/STL.dir/main.cpp.obj: ../maps.h
+CMakeFiles/STL.dir/main.cpp.obj: ../sets.h
 CMakeFiles/STL.dir/main.cpp.obj: ../vector_erase.h
 CMakeFiles/STL.dir/main.cpp.obj: ../vector_sort.h
 
 CMakeFiles/STL.dir/maps.cpp.obj: ../maps.cpp
 CMakeFiles/STL.dir/maps.cpp.obj: ../maps.h
+
+CMakeFiles/STL.dir/sets.cpp.obj: ../sets.cpp
+CMakeFiles/STL.dir/sets.cpp.obj: ../sets.h
 
 CMakeFiles/STL.dir/vector_erase.cpp.obj: ../vector_erase.cpp
 CMakeFiles/STL.dir/vector_erase.cpp.obj: ../vector_erase.h
