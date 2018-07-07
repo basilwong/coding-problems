@@ -7,7 +7,8 @@ Given a list of rational numbers, finds their product.
 
 
 def product(fracs):
-    t = # complete this line with a reduce statement
+    # finds the product of the list of fractions and returns the numerator and denominator
+    t = reduce(lambda x, y : x*y, fracs)
     return t.numerator, t.denominator
 
 
