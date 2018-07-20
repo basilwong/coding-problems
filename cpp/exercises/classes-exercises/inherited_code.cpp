@@ -31,21 +31,21 @@ bool checkUsername(string username) {
 	return isValid;
 }
 
-// int main() {
-// 	int T; cin >> T;
-// 	while(T--) {
-// 		string username;
-// 		cin >> username;
-// 		try {
-// 			bool isValid = checkUsername(username);
-// 			if(isValid) {
-// 				cout << "Valid" << '\n';
-// 			} else {
-// 				cout << "Invalid" << '\n';
-// 			}
-// 		} catch (BadLengthException e) {
-// 			cout << "Too short: " << e.what() << '\n';
-// 		}
-// 	}
-// 	return 0;
-// }
+int main() {
+	int T; cin >> T;
+	while(T--) {
+		string username;
+		cin >> username;
+		try {
+			bool isValid = checkUsername(username);
+			if(isValid) {
+				cout << "Valid" << '\n';
+			} else {
+				cout << "Invalid" << '\n';
+			}
+		} catch (BadLengthException e) {
+			cout << "Too short: " << e.what() << '\n';
+		}
+	}
+	return 0;
+}
