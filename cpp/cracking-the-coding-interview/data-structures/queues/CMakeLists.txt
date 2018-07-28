@@ -3,4 +3,4 @@ project(queues)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(queues main.cpp)
+add_executable(queues a_tale_of_two_stacks.cpp)
