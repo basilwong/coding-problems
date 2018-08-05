@@ -8,7 +8,11 @@ struct Node {
 };
 
 vector<string> split_string(string);
-void parse_operation(Node *root, string op_in, string contact_in);
+void parse_operation(Node *root, string op_in, string contact_in, vector<string> op_contact_in);
+void add_contact(Node *root, string contact, vector<string> op_contact);
+int find_contacts(Node *root, string contact, vector<string> op_contact);
+Node* find_word(Node *root, string contact, vector<string> op_contact);
+int find_ends(Node *n);
 Node* new_node();
 
 
@@ -30,7 +34,7 @@ int main()
 
     string contact = opContact[1];
 
-    parse_operation(root, op, contact);
+    parse_operation(root, op, contact, opContact);
 
   }
 
@@ -67,17 +71,70 @@ vector<string> split_string(string input_string) {
 }
 
 // Parses the inputted operations and executes the queries.
-void parse_operation(Node *root, string op_in, string contact_in) {
+void parse_operation(Node *root, string op_in, string contact_in, vector<string> op_contact_in) {
 
   if (op_in == "add") {
-
+    add_contact(root, contact_in, op_contact_in);
   } else if (op_in == "find") {
-
+    std::cout << find_contacts(root, contact_in, op_contact_in) << "\n";
   }
 }
 
-void add_contact(Node *root, string contact) {
+void add_contact(Node *root, string contact, vector<string> op_contact) {
+  Node *builder = root;
+  int letter_index;
+  for (int i = 0; i < contact.size(); i++) {
+    letter_index = contact[i] - 'a';
+    if (builder->children[letter_index] == NULL) {
+      builder->children[letter_index] = new_node();
+    }
 
+    builder = builder->children[letter_index];
+  }
+
+  builder->end_of_word = true;
+}
+
+int find_contacts(Node *root, string contact, vector<string> op_contact) {
+  Node *word_root = find_word(root, contact, op_contact);
+
+  if (word_root == NULL) {
+    return 0;
+  }
+
+  return find_ends(word_root);
+}
+
+Node* find_word(Node *root, string contact, vector<string> op_contact) {
+  Node *climber = root;
+  int letter_index;
+  for (int i = 0; i < contact.size(); i++) {
+    letter_index = contact[i] - 'a';
+    if (climber->children[letter_index] == NULL) {
+      climber = NULL;
+      return climber;
+    }
+
+    climber = climber->children[letter_index];
+  }
+
+  return climber;
+}
+
+int find_ends(Node *n) {
+  int count = 0;
+
+  for (int i = 0; i < 26; i++) {
+    if (n->children[i] != NULL) {
+      count += find_ends(n->children[i]);
+    }
+  }
+
+  if (n->end_of_word) {
+    count++;
+  }
+
+  return count;
 }
 
 // Creates a new Node struct pointer and instantiates all the alphabet pointers
