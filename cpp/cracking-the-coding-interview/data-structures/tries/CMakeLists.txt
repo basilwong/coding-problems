@@ -3,4 +3,4 @@ project(tries)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(tries main.cpp)
+add_executable(tries contacts.cpp)
