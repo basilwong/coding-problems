@@ -5,6 +5,7 @@
 #include <iostream>
 #include <algorithm>
 #include <set>
+#include <queue>
 using namespace std;
 
 class Graph {
@@ -57,81 +58,76 @@ public:
     for (int i = 0; i < start; i++) {
       sr.push_back(bfs_get_length(start, i));
     }
-
-    for (int j = start; j < size; j++) {
+    sr.push_back(-1);
+    for (int j = start + 1; j < size; j++) {
       sr.push_back(bfs_get_length(start, j));
     }
 
     return sr;
   }
 
-  // Gets the length of the shortest path from the start node to the end node.
+  // Gets the length of the shortest path from the start node to the destination node.
   // This function uses breadth first search algorithm to get shortest path.
   // If no path exists this function returns -1.
-  int bfs_get_length(int start, int end) {
+  int bfs_get_length(int start, int destination) {
 
     Node *check_node;
     int path_length = 0;
-    std::vector< Node* > to_visit;
+    std::queue< Node* > to_visit;
+    std::set< Node* > visited;
     std::vector< Node* > next_to_visit;
-    std::set< int > visited;
 
-    to_visit.push_back(node_lookup[start]);
+    to_visit.push(node_lookup[start]);
 
     while(!to_visit.empty()) {
 
       // Get the next node to check from the to_visit vector of Node pointers.
-      check_node = to_visit.back();
-      to_visit.pop_back();
+      check_node = to_visit.front();
+      to_visit.pop();
 
-      // Returnn the current path length if we get the required end.
-      if (check_node->id == end) {
+      std::cout << "\n\nChecking: " << check_node->id;
+      std::cout << "\nVisited: ";
+      for (auto& nodee : visited) {
+        std::cout << nodee->id << " ";
+      }
+
+      // Return the current path length if we get the required end.
+      if (check_node->id == destination) {
+        std::cout << "\nFound path at " << check_node->id << " of length " << path_length;
         return path_length;
       }
 
       // Skips nodes that have already been visited.
-      if (visited.find(check_node->id) != visited.end()){
+      if (visited.find(check_node) != visited.end()){
         continue;
       }
 
-      visited.insert(check_node->id);
+      visited.insert(check_node);
 
       // If the node that is checked is not the end, we add all adjacent nodes
       // to the next round of nodes.
       for (auto& adj_node : check_node->adjacent) {
-        if (visited.find(adj_node->id) == visited.end()) {
           next_to_visit.push_back(adj_node);
-        }
       }
 
       // If all the current adjacted nodes are not the end, we add the next
       // level of nodes to the to_visit vector (from the next_to_visit vector).
       if (to_visit.empty()) {
         for (auto& next_node : next_to_visit) {
-          to_visit.push_back(next_node);
+          to_visit.push(next_node);
         }
         next_to_visit.clear();
         path_length += 6; // Going to next level so add 6 to path length.
       }
     }
 
+    std::cout << "\nCould not find path.";
     return -1; // If no path found.
 
   }
 
 
 };
-
-/*
-2
-4 2
-1 2
-1 3
-1
-3 1
-2 3
-2
-*/
 
 int main() {
     int queries;
@@ -172,8 +168,7 @@ int main() {
 // This main was used for white box testing each of the components of the
 // graph class.
 // int main() {
-//
-//   Graph new_graph = Graph(5);
+//  Graph new_graph = Graph(5);
 //
 //   std::cout << "\n\nTesting the proper creation of a graph upon construction.:\n\n";
 //   // Testing the proper creation of a graph upon construction.
@@ -200,4 +195,47 @@ int main() {
 //     std::cout << "\nLength: " << length;
 //   }
 //
+//   // Testing fo correct results: straight graph.
+//   Graph straight_graph = Graph(5);
+//   straight_graph.add_edge(0, 1);
+//   straight_graph.add_edge(1, 2);
+//   straight_graph.add_edge(2, 3);
+//   straight_graph.add_edge(3, 4);
+//
+//   std::vector< int > shortest_straight = straight_graph.shortest_reach(0);
+//   std::cout << "\n\nResults from straight graph, start at 0.";
+//   for (auto& length_s : shortest_straight) {
+//     std::cout << "\nLength: " << length_s;
+//   }
+//   std::cout << "\nExpected Result: 6, 12, 18, 24";
+//
+//   std::vector< int > straight_middle = straight_graph.shortest_reach(2);
+//   std::cout << "\n\nResults from straight graph, start at 3.";
+//   for (auto& length_m : straight_middle) {
+//     std::cout << "\nLength: " << length_m;
+//   }
+//   std::cout << "\nExpected Result: 12, 6, 6, 12";
+//
+//   // Testing circle graph.
+//   Graph circle_graph = Graph(5);
+//   circle_graph.add_edge(0, 1);
+//   circle_graph.add_edge(1, 2);
+//   circle_graph.add_edge(2, 3);
+//   circle_graph.add_edge(3, 4);
+//   circle_graph.add_edge(4, 0);
+//
+//
+//   std::vector< int > shortest_circle = circle_graph.shortest_reach(0);
+//   std::cout << "\n\nResults from circle graph, start at 0.";
+//   for (auto& length_s : shortest_circle) {
+//     std::cout << "\nLength: " << length_s;
+//   }
+//   std::cout << "\nExpected Result: 6, 12, 12, 6";
+//
+//   std::vector< int > circle_middle = circle_graph.shortest_reach(2);
+//   std::cout << "\n\nResults from circle graph, start at 3.";
+//   for (auto& length_m : circle_middle) {
+//     std::cout << "\nLength: " << length_m;
+//   }
+//   std::cout << "\nExpected Result: 12, 6, 6, 12";
 // }
