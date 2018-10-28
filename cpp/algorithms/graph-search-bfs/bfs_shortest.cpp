@@ -71,13 +71,13 @@ public:
   // If no path exists this function returns -1.
   int bfs_get_length(int start, int destination) {
 
-    Node *check_node;
+    int check_node;
     int path_length = 0;
-    std::queue< Node* > to_visit;
-    std::set< Node* > visited;
-    std::vector< Node* > next_to_visit;
+    std::queue< int > to_visit;
+    std::set< int > visited;
+    std::vector< int > next_to_visit;
 
-    to_visit.push(node_lookup[start]);
+    to_visit.push(start);
 
     while(!to_visit.empty()) {
 
@@ -85,20 +85,21 @@ public:
       check_node = to_visit.front();
       to_visit.pop();
 
-      std::cout << "\n\nChecking: " << check_node->id;
+      std::cout << "\n\nChecking: " << check_node;
       std::cout << "\nVisited: ";
       for (auto& nodee : visited) {
-        std::cout << nodee->id << " ";
+        std::cout << nodee << " ";
       }
 
       // Return the current path length if we get the required end.
-      if (check_node->id == destination) {
-        std::cout << "\nFound path at " << check_node->id << " of length " << path_length;
+      if (check_node == destination) {
+        std::cout << "\nFound path at " << check_node << " of length " << path_length << "\n\n";
         return path_length;
       }
 
       // Skips nodes that have already been visited.
       if (visited.find(check_node) != visited.end()){
+        std::cout << "\nAlready visited.";
         continue;
       }
 
@@ -106,8 +107,11 @@ public:
 
       // If the node that is checked is not the end, we add all adjacent nodes
       // to the next round of nodes.
-      for (auto& adj_node : check_node->adjacent) {
-          next_to_visit.push_back(adj_node);
+      for (auto& adj_node : node_lookup[check_node]->adjacent) {
+        if (std::find(next_to_visit.begin(), next_to_visit.end(), adj_node->id) == next_to_visit.end()) {
+          std::cout << "\nAdding to next to visit:" << adj_node->id;
+          next_to_visit.push_back(adj_node->id);
+        }
       }
 
       // If all the current adjacted nodes are not the end, we add the next
@@ -117,11 +121,12 @@ public:
           to_visit.push(next_node);
         }
         next_to_visit.clear();
+        std::cout << "\nNext round, ading 6 to path.";
         path_length += 6; // Going to next level so add 6 to path length.
       }
     }
 
-    std::cout << "\nCould not find path.";
+    std::cout << "\nCould not find path.\n\n";
     return -1; // If no path found.
 
   }
