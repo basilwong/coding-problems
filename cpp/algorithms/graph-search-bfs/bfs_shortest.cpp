@@ -85,21 +85,21 @@ public:
       check_node = to_visit.front();
       to_visit.pop();
 
-      std::cout << "\n\nChecking: " << check_node;
-      std::cout << "\nVisited: ";
-      for (auto& nodee : visited) {
-        std::cout << nodee << " ";
-      }
+      // std::cout << "\n\nChecking: " << check_node;
+      // std::cout << "\nVisited: ";
+      // for (auto& nodee : visited) {
+      //   std::cout << nodee << " ";
+      // }
 
       // Return the current path length if we get the required end.
       if (check_node == destination) {
-        std::cout << "\nFound path at " << check_node << " of length " << path_length << "\n\n";
+        // std::cout << "\nFound path at " << check_node << " of length " << path_length << "\n\n";
         return path_length;
       }
 
       // Skips nodes that have already been visited.
       if (visited.find(check_node) != visited.end()){
-        std::cout << "\nAlready visited.";
+        // std::cout << "\nAlready visited.";
         continue;
       }
 
@@ -109,7 +109,7 @@ public:
       // to the next round of nodes.
       for (auto& adj_node : node_lookup[check_node]->adjacent) {
         if (std::find(next_to_visit.begin(), next_to_visit.end(), adj_node->id) == next_to_visit.end()) {
-          std::cout << "\nAdding to next to visit:" << adj_node->id;
+          // std::cout << "\nAdding to next to visit:" << adj_node->id;
           next_to_visit.push_back(adj_node->id);
         }
       }
@@ -121,12 +121,12 @@ public:
           to_visit.push(next_node);
         }
         next_to_visit.clear();
-        std::cout << "\nNext round, ading 6 to path.";
+        // std::cout << "\nNext round, ading 6 to path.";
         path_length += 6; // Going to next level so add 6 to path length.
       }
     }
 
-    std::cout << "\nCould not find path.\n\n";
+    // std::cout << "\nCould not find path.\n\n";
     return -1; // If no path found.
 
   }

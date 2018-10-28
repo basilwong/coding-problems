@@ -106,7 +106,7 @@ void check_test_6() {
 
 
 int main() {
-  check_test_3();
+  check_test_5();
 
   return 0;
 }
