@@ -75,7 +75,7 @@ public:
     int path_length = 0;
     std::queue< int > to_visit;
     std::set< int > visited;
-    std::vector< int > next_to_visit;
+    std::set< int > next_to_visit;
 
     to_visit.push(start);
 
@@ -108,10 +108,9 @@ public:
       // If the node that is checked is not the end, we add all adjacent nodes
       // to the next round of nodes.
       for (auto& adj_node : node_lookup[check_node]->adjacent) {
-        if (std::find(next_to_visit.begin(), next_to_visit.end(), adj_node->id) == next_to_visit.end()) {
           // std::cout << "\nAdding to next to visit:" << adj_node->id;
-          next_to_visit.push_back(adj_node->id);
-        }
+          next_to_visit.insert(adj_node->id);
+
       }
 
       // If all the current adjacted nodes are not the end, we add the next
@@ -172,75 +171,75 @@ int main() {
 
 // This main was used for white box testing each of the components of the
 // graph class.
-// int main() {
-//  Graph new_graph = Graph(5);
-//
-//   std::cout << "\n\nTesting the proper creation of a graph upon construction.:\n\n";
-//   // Testing the proper creation of a graph upon construction.
-//   for(auto it = new_graph.node_lookup.cbegin(); it != new_graph.node_lookup.cend(); ++it) {
-//       std::cout << it->first << " " << it->second->id << "\n";
-//   }
-//
-//   std::cout << "\n\nTesting add_edge:\n\n";
-//
-//   // Testing the add edge method.
-//   new_graph.add_edge(0, 2); // In the actual main code, the id values of the edges are decreased by one to make them start at 0.
-//
-//   std::cout << new_graph.node_lookup[0]->adjacent[0]->id << "\n"; // Tests whether an edge was added properly between node 0 and 2.
-//
-//   // Testing the breadth first search function.
-//   std::cout << "\n\nTesting bfs algorithm:\n\n";
-//   std::cout << "\nFound path length from 0 to 2 is: " << new_graph.bfs_get_length(0, 2) << " should be 6.\n";
-//   std::cout << "\nFound path length from 0 to 1 is: " << new_graph.bfs_get_length(0, 1) << " should be -1.\n";
-//
-//   // Testing shortest reach function.
-//   std::cout << "\n\nTesting shortest_reach algorithm:\n\n";
-//   std::vector< int > shortest = new_graph.shortest_reach(0);
-//   for (auto& length : shortest) {
-//     std::cout << "\nLength: " << length;
-//   }
-//
-//   // Testing fo correct results: straight graph.
-//   Graph straight_graph = Graph(5);
-//   straight_graph.add_edge(0, 1);
-//   straight_graph.add_edge(1, 2);
-//   straight_graph.add_edge(2, 3);
-//   straight_graph.add_edge(3, 4);
-//
-//   std::vector< int > shortest_straight = straight_graph.shortest_reach(0);
-//   std::cout << "\n\nResults from straight graph, start at 0.";
-//   for (auto& length_s : shortest_straight) {
-//     std::cout << "\nLength: " << length_s;
-//   }
-//   std::cout << "\nExpected Result: 6, 12, 18, 24";
-//
-//   std::vector< int > straight_middle = straight_graph.shortest_reach(2);
-//   std::cout << "\n\nResults from straight graph, start at 3.";
-//   for (auto& length_m : straight_middle) {
-//     std::cout << "\nLength: " << length_m;
-//   }
-//   std::cout << "\nExpected Result: 12, 6, 6, 12";
-//
-//   // Testing circle graph.
-//   Graph circle_graph = Graph(5);
-//   circle_graph.add_edge(0, 1);
-//   circle_graph.add_edge(1, 2);
-//   circle_graph.add_edge(2, 3);
-//   circle_graph.add_edge(3, 4);
-//   circle_graph.add_edge(4, 0);
-//
-//
-//   std::vector< int > shortest_circle = circle_graph.shortest_reach(0);
-//   std::cout << "\n\nResults from circle graph, start at 0.";
-//   for (auto& length_s : shortest_circle) {
-//     std::cout << "\nLength: " << length_s;
-//   }
-//   std::cout << "\nExpected Result: 6, 12, 12, 6";
-//
-//   std::vector< int > circle_middle = circle_graph.shortest_reach(2);
-//   std::cout << "\n\nResults from circle graph, start at 3.";
-//   for (auto& length_m : circle_middle) {
-//     std::cout << "\nLength: " << length_m;
-//   }
-//   std::cout << "\nExpected Result: 12, 6, 6, 12";
-// }
+int main() {
+ Graph new_graph = Graph(5);
+
+  std::cout << "\n\nTesting the proper creation of a graph upon construction.:\n\n";
+  // Testing the proper creation of a graph upon construction.
+  for(auto it = new_graph.node_lookup.cbegin(); it != new_graph.node_lookup.cend(); ++it) {
+      std::cout << it->first << " " << it->second->id << "\n";
+  }
+
+  std::cout << "\n\nTesting add_edge:\n\n";
+
+  // Testing the add edge method.
+  new_graph.add_edge(0, 2); // In the actual main code, the id values of the edges are decreased by one to make them start at 0.
+
+  std::cout << new_graph.node_lookup[0]->adjacent[0]->id << "\n"; // Tests whether an edge was added properly between node 0 and 2.
+
+  // Testing the breadth first search function.
+  std::cout << "\n\nTesting bfs algorithm:\n\n";
+  std::cout << "\nFound path length from 0 to 2 is: " << new_graph.bfs_get_length(0, 2) << " should be 6.\n";
+  std::cout << "\nFound path length from 0 to 1 is: " << new_graph.bfs_get_length(0, 1) << " should be -1.\n";
+
+  // Testing shortest reach function.
+  std::cout << "\n\nTesting shortest_reach algorithm:\n\n";
+  std::vector< int > shortest = new_graph.shortest_reach(0);
+  for (auto& length : shortest) {
+    std::cout << "\nLength: " << length;
+  }
+
+  // Testing fo correct results: straight graph.
+  Graph straight_graph = Graph(5);
+  straight_graph.add_edge(0, 1);
+  straight_graph.add_edge(1, 2);
+  straight_graph.add_edge(2, 3);
+  straight_graph.add_edge(3, 4);
+
+  std::vector< int > shortest_straight = straight_graph.shortest_reach(0);
+  std::cout << "\n\nResults from straight graph, start at 0.";
+  for (auto& length_s : shortest_straight) {
+    std::cout << "\nLength: " << length_s;
+  }
+  std::cout << "\nExpected Result: 6, 12, 18, 24";
+
+  std::vector< int > straight_middle = straight_graph.shortest_reach(2);
+  std::cout << "\n\nResults from straight graph, start at 3.";
+  for (auto& length_m : straight_middle) {
+    std::cout << "\nLength: " << length_m;
+  }
+  std::cout << "\nExpected Result: 12, 6, 6, 12";
+
+  // Testing circle graph.
+  Graph circle_graph = Graph(5);
+  circle_graph.add_edge(0, 1);
+  circle_graph.add_edge(1, 2);
+  circle_graph.add_edge(2, 3);
+  circle_graph.add_edge(3, 4);
+  circle_graph.add_edge(4, 0);
+
+
+  std::vector< int > shortest_circle = circle_graph.shortest_reach(0);
+  std::cout << "\n\nResults from circle graph, start at 0.";
+  for (auto& length_s : shortest_circle) {
+    std::cout << "\nLength: " << length_s;
+  }
+  std::cout << "\nExpected Result: 6, 12, 12, 6";
+
+  std::vector< int > circle_middle = circle_graph.shortest_reach(2);
+  std::cout << "\n\nResults from circle graph, start at 3.";
+  for (auto& length_m : circle_middle) {
+    std::cout << "\nLength: " << length_m;
+  }
+  std::cout << "\nExpected Result: 12, 6, 6, 12";
+}
