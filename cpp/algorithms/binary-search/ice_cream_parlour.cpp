@@ -7,20 +7,54 @@ vector<string> split_string(string);
 // Prints what numbers in the cost vector add up to exactly the money input.
 void whatFlavors(vector<int> cost, int money) {
 
-  int id1, id2;
+  bool found = false;
+  int id1, id2, left, right, mid, val, price1, price2;
+  std::map<int, std::vector<int> > table;
+  // Adding values to a table to save the IDs of their order.
+  for (int i = 0; i < cost.size(); i++) {
+    std::vector<int> a = {};
+    table.insert(std::pair<int,std::vector<int> >(cost[i], a));
+  }
+  for (int x = 0; x < cost.size(); x++) {
+    table[cost[x]].push_back(x);
+  }
+  // Now that the IDs are saved we sort the valeus in the cost vector.
+  std::sort (cost.begin(), cost.end());
 
-  for (int i = 0; i < cost.size() - 1; i++) {
-    for (int j = i + 1; j < cost.size(); j++) {
-      if (cost[i] + cost[j] == money) {
-        id1 = i + 1;
-        id2 = j + 1;
+  for (int j = 0; j < cost.size(); j ++) {
+    if (found) {
+      break;
+    }
+    left = j + 1;
+    right = cost.size() - 1;
+    mid = (left + right) / 2;
+    val = money - cost[j];
+
+    while (left <= right) {
+      mid = (left + right) / 2;
+      if (cost[mid] == val) {
+        price1 = cost[j];
+        price2 = cost[mid];
+        found = true;
+        break;
+      } else if (cost[mid] > val) {
+        right = mid - 1;
+      } else {
+        left = mid + 1;
       }
     }
   }
-  if (id1 == 0) {
-    throw std::domain_error("Bad input");
+
+  id1 = table[price1][0];
+  id2 = table[price2][0];
+  if (id1 == id2) {
+    id2 = table[price2][1];
   }
-  std::cout << id1 << " " << id2 << "\n";
+  if (id2 < id1) {
+    std::swap(id1, id2);
+  }
+
+  std::cout << (id1 + 1) << " " << (id2 + 1) << "\n";
 }
 
 int main()
