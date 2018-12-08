@@ -1,2 +1,2 @@
-C:\Users\wongb\AppData\Local\Temp\ccvzPb1m.o:main_ab_dif.cpp:(.text+0x199): undefined reference to `minimumAbsoluteDifference(std::vector<int, std::allocator<int> >)'
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../libmingw32.a(main.o):(.text.startup+0xa0): undefined reference to `WinMain@16'
 collect2.exe: error: ld returned 1 exit status

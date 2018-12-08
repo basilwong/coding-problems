@@ -27,7 +27,7 @@ int main()
     }
 
     int result = minimumAbsoluteDifference(arr);
-    // std::cout << result;
+    std::cout << result;
     fout << result << "\n";
 
     fout.close();
