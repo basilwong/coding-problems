@@ -4,7 +4,28 @@ using namespace std;
 
 vector<string> split_string(string);
 
-// Prints what numbers in the cost vector add up to exactly the money input.
+/*
+Prints what numbers in the cost vector add up to exactly the money input.
+
+Utilizes a binary search algorithm and hash table to reduce the time for
+finding the solution in large problems. The unsorted cost array is put into
+a C++ map (hash table), where the original order of the ice cream prices is
+saved as the value and the price as the key. To deal with repeated prices,
+the values of the map are integer vectors which allow for the containing of
+multiple integers for each price.
+
+Next the cost array is sorted so that we can utilize the binary search algorithm
+for finding two prices that add up to the 'money' input.
+
+Essentially, starting from the cheapest flavour we binary search all the
+flavours more expensive then that flavour for a matching price that adds up to
+exactly money. If one is not found, then the next most expensive flavour is
+chosen and the flavours that are more expensive then that flavour are binary
+searched.
+
+Once the two prices are found, the hash table is used to find the two lowest
+ID occurences of those prices. 
+*/
 void whatFlavors(vector<int> cost, int money) {
 
   bool found = false;
