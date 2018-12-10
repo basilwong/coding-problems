@@ -19,7 +19,7 @@ string primality(int n) {
     if (n % 2 == 0) {
       prime = false;
     }
-    for (int x = 3; x < std::sqrt(n); x += 2) {
+    for (int x = 3; x <= std::sqrt(n); x += 2) {
       if (n % x == 0) {
         prime = false;
       }
@@ -35,25 +35,16 @@ string primality(int n) {
   }
 }
 
+// Main function for testing primality function.
 int main()
 {
-    ofstream fout(getenv("OUTPUT_PATH"));
-
-    int p;
-    cin >> p;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-    for (int p_itr = 0; p_itr < p; p_itr++) {
-        int n;
-        cin >> n;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-        string result = primality(n);
-
-        cout << result << "\n";
+  int count = 0;
+  for (int i = 1; i < 100; i++) {
+    if (primality(i) == "Prime") {
+      count++;
+      std::cout << i << "\n";
     }
-
-    fout.close();
-
-    return 0;
+  }
+  std::cout << "\n\n";
+  std::cout << count << "\n";
 }
