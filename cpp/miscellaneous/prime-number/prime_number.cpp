@@ -47,4 +47,22 @@ int main()
   }
   std::cout << "\n\n";
   std::cout << count << "\n";
+
+  // ofstream fout(getenv("OUTPUT_PATH"));
+  //
+  // int p;
+  // cin >> p;
+  // cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  // 
+  // for (int p_itr = 0; p_itr < p; p_itr++) {
+  //     int n;
+  //     cin >> n;
+  //     cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  //
+  //     string result = primality(n);
+  //
+  //     fout << result << "\n";
+  // }
+  //
+  // fout.close();
 }
