@@ -12,22 +12,28 @@ void minimumBribes(vector<int> q) {
 
   std::cout << "\n";
 
-  for (int x = q.size() - 1; x >= 0; x--) {
+  // std::vector<int> tracker(q.size(), 0);
+
+  for (int x = 0; x < q.size(); x++) {
     initial_position = x + 1;
     if (initial_position != q[x]) {
-      std::cout << initial_position << " and " << q[x] << " out of place.\n";
+      // std::cout << initial_position << " and " << q[x] << " out of place.\n";
       dif = q[x] - initial_position;
       if (dif > 0) {
-        if (dif <= 2) {
-          swaps += dif;
-        } else {
+        if (dif > 2) {
           std::cout << "Too chaotic\n";
           return;
+        } else {
+          // std::cout << "Adding " << q[x] << " to tracker.\n";
+          // tracker[q[x] - 1] = 1;
         }
       } else {
-        if (dif < -2) {
-          swaps += 1;
+        for (int y = x; y >= 0; y--) {
+          if (q[y] > q[x]) {
+            swaps++;
+          }
         }
+        // std::cout << "swaps = " << swaps << " after " << q[x] << "\n";
       }
     }
   }
