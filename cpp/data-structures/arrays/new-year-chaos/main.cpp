@@ -7,36 +7,31 @@ vector<string> split_string(string);
 void minimumBribes(vector<int> q) {
 
   int initial_position;
-  int delta = 0;
+  int dif;
   int swaps = 0;
 
-  std::cout << "\n\n";
+  std::cout << "\n";
 
   for (int x = q.size() - 1; x >= 0; x--) {
     initial_position = x + 1;
     if (initial_position != q[x]) {
-      // if (std::abs(initial_position - q[x]) > 2) {
-      //   delta = 1;
-      //   break;
-      // }
-      delta += initial_position - q[x];
-      if (delta == 0) {
-        swaps += std::abs(initial_position - q[x]);
+      std::cout << initial_position << " and " << q[x] << " out of place.\n";
+      dif = q[x] - initial_position;
+      if (dif > 0) {
+        if (dif <= 2) {
+          swaps += dif;
+        } else {
+          std::cout << "Too chaotic\n";
+          return;
+        }
+      } else {
+        if (dif < -2) {
+          swaps += 1;
+        }
       }
     }
-    std::cout << delta << " ";
-    // else if (intial_position > q[x]) {
-    //   delta += inital_position - q[x];
-    // }
   }
-  std::cout << "\n\n";
-  if (delta != 0) {
-    std::cout << "Too chaotic\n";
-  } else {
-    std::cout << swaps << "\n";
-  }
-  std::cout << "\n\n";
-
+  std::cout << swaps << "\n";
 }
 
 void test_1() {
