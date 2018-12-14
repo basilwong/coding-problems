@@ -4,81 +4,110 @@ using namespace std;
 
 vector<string> split_string(string);
 
-void minimumBribes(vector<int> q) {
+int minimumBribes(vector<int> q) {
 
   int initial_position;
   int dif;
   int swaps = 0;
-
-  std::cout << "\n";
+  bool in_order = true;
+  // std::cout << "\n";
 
   // std::vector<int> tracker(q.size(), 0);
 
-  for (int x = 0; x < q.size(); x++) {
+  for (int x = 0; x < q.size() - 1; x++) {
     initial_position = x + 1;
+
     if (initial_position != q[x]) {
-      // std::cout << initial_position << " and " << q[x] << " out of place.\n";
+      in_order = false;
       dif = q[x] - initial_position;
+      // If the value is greater than initlal, possible switch.
       if (dif > 0) {
         if (dif > 2) {
-          std::cout << "Too chaotic\n";
-          return;
+          return -1;
         } else {
-          // std::cout << "Adding " << q[x] << " to tracker.\n";
-          // tracker[q[x] - 1] = 1;
-        }
-      } else {
-        for (int y = x; y >= 0; y--) {
-          if (q[y] > q[x]) {
+          if (q[x] > q[x+1]) {
+            std::swap(q[x], q[x+1]);
             swaps++;
           }
         }
-        // std::cout << "swaps = " << swaps << " after " << q[x] << "\n";
+      } else { // Values pre algorithm swap should not be less than initial.
+        return -1;
       }
     }
   }
-  std::cout << swaps << "\n";
+
+  for (int y = q.size() - 1; y > 0; y--) {
+    initial_position = y + 1;
+
+    if (initial_position != q[y]) {
+      in_order = false;
+      dif = q[y] - initial_position;
+
+      // If a value that is smaller than it should is behind a bigger value, swap.
+      if (dif < 0) {
+        if (q[y] < q[y-1]) {
+          std::swap(q[y], q[y-1]);
+          swaps++;
+        }
+      }
+    }
+  }
+
+  if (!in_order) {
+    swaps += minimumBribes(q);
+    return swaps;
+  } else {
+    return swaps;
+  }
+  // std::cout << swaps << "\n";
+  // return;
 }
 
 void test_1() {
   std::cout << "Output should be Too Chaotic:\n";
   const int arr1[] = {5, 1, 2, 3, 7, 8, 6, 4};
   std::vector<int> vec1 (arr1, arr1 + sizeof(arr1) / sizeof(arr1[0]) );
-  minimumBribes(vec1);
+  std::cout << minimumBribes(vec1) << "\n";
 
   std::cout << "\nOutput should be 7:\n";
   int arr2[] = {1, 2, 5, 3, 7, 8, 6, 4};
   std::vector<int> vec2 (arr2, arr2 + sizeof(arr2) / sizeof(arr2[0]) );
-  minimumBribes(vec2);
+  std::cout << minimumBribes(vec2) << "\n";
 }
 
 int main()
 {
-  test_1();
-    // int t;
-    // cin >> t;
-    // cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    //
-    // for (int t_itr = 0; t_itr < t; t_itr++) {
-    //     int n;
-    //     cin >> n;
-    //     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    //
-    //     string q_temp_temp;
-    //     getline(cin, q_temp_temp);
-    //
-    //     vector<string> q_temp = split_string(q_temp_temp);
-    //
-    //     vector<int> q(n);
-    //
-    //     for (int i = 0; i < n; i++) {
-    //         int q_item = stoi(q_temp[i]);
-    //
-    //         q[i] = q_item;
-    //     }
-    //
-    //     minimumBribes(q);
-    // }
+  // test_1();
+    int swaps;
+    int t;
+    cin >> t;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+    for (int t_itr = 0; t_itr < t; t_itr++) {
+        int n;
+        cin >> n;
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+        string q_temp_temp;
+        getline(cin, q_temp_temp);
+
+        vector<string> q_temp = split_string(q_temp_temp);
+
+        vector<int> q(n);
+
+        for (int i = 0; i < n; i++) {
+            int q_item = stoi(q_temp[i]);
+
+            q[i] = q_item;
+        }
+
+        swaps = minimumBribes(q);
+        if (swaps == -1) {
+          std::cout << "Too chaotic\n";
+        } else {
+          std::cout << swaps << "\n";
+        }
+    }
 
     return 0;
 }
