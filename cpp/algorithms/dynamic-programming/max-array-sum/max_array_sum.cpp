@@ -12,14 +12,14 @@ int maxSubsetSum(vector<int> arr) {
   // State 0: Post value zero or lower.
   // State 1: The first part of adjacent group.
   // State 2: The second part of adjacent group.
-  int analysis_state; // 0, 1, 2
+  int analysis_state = 0;; // 0, 1, 2
 
-  if (arr[0] > 0) {
-    section_sum1 += arr[0];
-    analysis_state = 2;
-  } else {
-    analysis_state = 0;
-  }
+  // if (arr[0] > 0) {
+  //   section_sum1 += arr[0];
+  //   analysis_state = 2;
+  // } else {
+  //   analysis_state = 0;
+  // }
 
   for (int i = 0; i < arr.size(); i++) {
     if (arr[i] > 0) {
