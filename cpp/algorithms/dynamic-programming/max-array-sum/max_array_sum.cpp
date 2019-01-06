@@ -4,87 +4,89 @@ using namespace std;
 
 vector<string> split_string(string);
 
+int subMaxSubset(vector<int> arr) {
+  
+}
+
 int maxSubsetSum(vector<int> arr) {
 
   int sum = 0;
-  int section_sum1 = 0;
-  int section_sum2 = 0;
-  // State 0: Post value zero or lower.
-  // State 1: The first part of adjacent group.
-  // State 2: The second part of adjacent group.
-  int analysis_state = 0;; // 0, 1, 2
-
-  // if (arr[0] > 0) {
-  //   section_sum1 += arr[0];
-  //   analysis_state = 2;
-  // } else {
-  //   analysis_state = 0;
-  // }
+  std::vector<int> negative_indices;
 
   for (int i = 0; i < arr.size(); i++) {
-    if (arr[i] > 0) {
-      if (analysis_state == 0) {
-        section_sum1 +=  arr[i];
-        analysis_state = 2;
-      } else if (analysis_state == 1) {
-        section_sum1 += arr[i];
-        analysis_state = 2;
-      } else if (analysis_state == 2) {
-        section_sum2 += arr[i];
-        analysis_state = 1;
-      } else {
-        std::cout << "\nDead code area, something went wrong.\n";
-      }
-    } else {
-      if (section_sum1 >= section_sum2) {
-        sum += section_sum1;
-      } else {
-        sum += section_sum2;
-      }
-      section_sum1 = 0;
-      section_sum2 = 0;
-      analysis_state = 0;
+    if (arr[i] <= 0) {
+      negative_indices.push_back(i);
     }
   }
 
-  if (section_sum1 >= section_sum2) {
-    sum += section_sum1;
+  if (negative_indices.size() == 0) {
+    n = 0;
   } else {
-    sum += section_sum2;
+    for (int j = 0; j < negative_indices.size(); j++) {
+
+    }
+    n = negative_indices.back();
   }
 
   return sum;
 
 }
 
+void test1() {
+  static const int arr_test1[] = {3, 7, 4, 6, 5};
+  std::vector<int> vec_test1 (arr_test1, arr_test1 + sizeof(arr_test1) / sizeof(arr_test1[0]) );
+  std::cout << "Test 1: 3 7 4 6 5\n";
+  int result1 = subMaxSubset(vec_test1);
+  std::cout << "Expected Result: 13\n";
+  std::cout << "Actual Result: " << result1;
+
+  std::cout << "\n";
+
+  static const int arr_test2[] = {2, 1, 5, 8, 4};
+  std::vector<int> vec_test2 (arr_test2, arr_test2 + sizeof(arr_test2) / sizeof(arr_test2[0]) );
+  std::cout << "Test 1: 2 1 5 8 4\n";
+  int result1 = subMaxSubset(vec_test2);
+  std::cout << "Expected Result: 11\n";
+  std::cout << "Actual Result: " << result2;
+
+  std::cout << "\n";
+
+  static const int arr_test3[] = {3, 5, -7, 8, 10};
+  std::vector<int> vec_test3 (arr_test3, arr_test3 + sizeof(arr_test3) / sizeof(arr_test3[0]) );
+  std::cout << "Test 1: 3 5 -7 8 10\n";
+  int result1 = subMaxSubset(vec_test3);
+  std::cout << "Expected Result: 11\n";
+  std::cout << "Actual Result: " << result3;
+}
+
 int main()
 {
-    ofstream fout(getenv("OUTPUT_PATH"));
-
-    int n;
-    cin >> n;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-    string arr_temp_temp;
-    getline(cin, arr_temp_temp);
-
-    vector<string> arr_temp = split_string(arr_temp_temp);
-
-    vector<int> arr(n);
-
-    for (int i = 0; i < n; i++) {
-        int arr_item = stoi(arr_temp[i]);
-
-        arr[i] = arr_item;
-    }
-
-    int res = maxSubsetSum(arr);
-
-    cout << res << "\n";
-
-    fout.close();
-
-    return 0;
+    // ofstream fout(getenv("OUTPUT_PATH"));
+    //
+    // int n;
+    // cin >> n;
+    // cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    //
+    // string arr_temp_temp;
+    // getline(cin, arr_temp_temp);
+    //
+    // vector<string> arr_temp = split_string(arr_temp_temp);
+    //
+    // vector<int> arr(n);
+    //
+    // for (int i = 0; i < n; i++) {
+    //     int arr_item = stoi(arr_temp[i]);
+    //
+    //     arr[i] = arr_item;
+    // }
+    //
+    // int res = maxSubsetSum(arr);
+    //
+    // cout << res << "\n";
+    //
+    // fout.close();
+    //
+    // return 0;
 }
 
 vector<string> split_string(string input_string) {
