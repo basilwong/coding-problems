@@ -4,10 +4,46 @@ using namespace std;
 
 vector<string> split_string(string);
 
+// Finds the max subset of an all positive vector.
 int subMaxSubset(vector<int> arr) {
-  
+
+  std::map< int, int > jumps;
+  int max = 0;
+  int sum = 0;
+  int index = 0;
+  int increment_index = 0;
+
+  for (int i = 0; i < arr.size(); i++) {
+    jumps[i] = 1;
+  }
+
+  while (start > 0) {
+    sum += arr[index];
+    if (index + jumps[index] < arr.size() - 1) {
+      index =+ jumps[index];
+    } else {
+      if (sum > max) {
+        max = sum;
+      }
+      sum = 0;
+      index = 0;
+    }
+  }
+
+  // sum = 0;
+  // index = 1;
+  // for (int i = 0; i < arr.size(); i++) {
+  //   jumps[i] = 1;
+  // }
+  //
+  // while (start > 0) {
+  //
+  // }
+
+  return max;
 }
 
+// Finds the max subset of a vector. No adjacent values.
 int maxSubsetSum(vector<int> arr) {
 
   int sum = 0;
@@ -55,7 +91,7 @@ void test1() {
   std::vector<int> vec_test3 (arr_test3, arr_test3 + sizeof(arr_test3) / sizeof(arr_test3[0]) );
   std::cout << "Test 1: 3 5 -7 8 10\n";
   int result1 = subMaxSubset(vec_test3);
-  std::cout << "Expected Result: 11\n";
+  std::cout << "Expected Result: 15\n";
   std::cout << "Actual Result: " << result3;
 }
 
