@@ -12,21 +12,38 @@ int subMaxSubset(vector<int> arr) {
   int sum = 0;
   int index = 0;
   int increment_index = 0;
+  int adds = 0;
 
   for (int i = 0; i < arr.size(); i++) {
-    jumps[i] = 1;
+    jumps[i] = 2;
   }
 
-  while (start > 0) {
+  while (true) {
     sum += arr[index];
     if (index + jumps[index] < arr.size() - 1) {
-      index =+ jumps[index];
+
+      index += jumps[index];
+      adds++;
+
+      if (jumps[index] >= jumps[increment_index]) {
+        increment_index = index;
+      }
+
     } else {
+
       if (sum > max) {
         max = sum;
       }
+
+      if ((adds == 1) && (index == 0)) {
+        break;
+      }
+
       sum = 0;
       index = 0;
+      jumps[increment_index]++;
+      increment_index = 0;
+      adds = 0;
     }
   }
 
@@ -47,6 +64,7 @@ int subMaxSubset(vector<int> arr) {
 int maxSubsetSum(vector<int> arr) {
 
   int sum = 0;
+  int n;
   std::vector<int> negative_indices;
 
   for (int i = 0; i < arr.size(); i++) {
@@ -76,27 +94,28 @@ void test1() {
   std::cout << "Expected Result: 13\n";
   std::cout << "Actual Result: " << result1;
 
-  std::cout << "\n";
+  std::cout << "\n\n";
 
   static const int arr_test2[] = {2, 1, 5, 8, 4};
   std::vector<int> vec_test2 (arr_test2, arr_test2 + sizeof(arr_test2) / sizeof(arr_test2[0]) );
   std::cout << "Test 1: 2 1 5 8 4\n";
-  int result1 = subMaxSubset(vec_test2);
+  int result2 = subMaxSubset(vec_test2);
   std::cout << "Expected Result: 11\n";
   std::cout << "Actual Result: " << result2;
 
-  std::cout << "\n";
+  std::cout << "\n\n";
 
   static const int arr_test3[] = {3, 5, -7, 8, 10};
   std::vector<int> vec_test3 (arr_test3, arr_test3 + sizeof(arr_test3) / sizeof(arr_test3[0]) );
   std::cout << "Test 1: 3 5 -7 8 10\n";
-  int result1 = subMaxSubset(vec_test3);
+  int result3 = subMaxSubset(vec_test3);
   std::cout << "Expected Result: 15\n";
   std::cout << "Actual Result: " << result3;
 }
 
 int main()
 {
+  test1();
     // ofstream fout(getenv("OUTPUT_PATH"));
     //
     // int n;
