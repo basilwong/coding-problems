@@ -4,98 +4,29 @@ using namespace std;
 
 vector<string> split_string(string);
 
-// Finds the max subset of an all positive vector.
-int subMaxSubset(vector<int> arr) {
-
-  std::map< int, int > jumps;
-  int max = 0;
-  int sum = 0;
-  int index = 0;
-  int increment_index = 0;
-  int adds = 0;
-
-  for (int i = 0; i < arr.size(); i++) {
-    jumps[i] = 2;
-  }
-
-  while (true) {
-    sum += arr[index];
-    if ((index + jumps[index]) < arr.size()) {
-
-      index += jumps[index];
-      adds++;
-
-      if (jumps[index] <= jumps[increment_index]) {
-        // std::cout << "index was incremented";
-        increment_index = index;
-      }
-      // std::cout << index;
-    } else {
-      // std::cout << "made it";
-      if (sum > max) {
-        // std::cout << "new max";
-        max = sum;
-      }
-
-      if ((adds == 0) && (index == 0)) {
-        break;
-      }
-
-      sum = 0;
-      index = 0;
-      jumps[increment_index]++;
-      // std::cout << jumps[increment_index];
-      // std::cout << adds;
-      increment_index = 0;
-      adds = 0;
-    }
-  }
-
-  // sum = 0;
-  // index = 1;
-  // for (int i = 0; i < arr.size(); i++) {
-  //   jumps[i] = 1;
-  // }
-  //
-  // while (start > 0) {
-  //
-  // }
-
-  return max;
-}
-
 // Finds the max subset of a vector. No adjacent values.
 int maxSubsetSum(vector<int> arr) {
-
-  int sum = 0;
-  int n;
-  std::vector<int> negative_indices;
-
-  for (int i = 0; i < arr.size(); i++) {
-    if (arr[i] <= 0) {
-      negative_indices.push_back(i);
-    }
+  if (arr.size() == 0) {
+    return 0;
   }
-
-  if (negative_indices.size() == 0) {
-    n = 0;
-  } else {
-    for (int j = 0; j < negative_indices.size(); j++) {
-
-    }
-    n = negative_indices.back();
+  arr[0] = std::max(0, arr[0]);
+  if (arr.size() == 1) {
+    return arr[0];
   }
-
-  return sum;
-
+  arr[1] = max(arr[0], arr[1]);
+  for (int i = 2; i < arr.size(); i++) {
+    arr[i] = max(arr[i-1], arr[i] + arr[i-2]);
+  }
+  return arr[arr.size() - 1];
 }
 
-void test1() {
-  static const int arr_test1[] = {3, 7, 4, 6, 5};
+// Tests the
+void test2() {
+  static const int arr_test1[] = {0, 7, -4, 1, 5};
   std::vector<int> vec_test1 (arr_test1, arr_test1 + sizeof(arr_test1) / sizeof(arr_test1[0]) );
-  std::cout << "Test 1: 3 7 4 6 5\n";
-  int result1 = subMaxSubset(vec_test1);
-  std::cout << "Expected Result: 13\n";
+  std::cout << "Test 1: 0 7 4 -1 5\n";
+  int result1 = maxSubsetSum(vec_test1);
+  std::cout << "Expected Result: 12\n";
   std::cout << "Actual Result: " << result1;
 
   std::cout << "\n\n";
@@ -103,7 +34,7 @@ void test1() {
   static const int arr_test2[] = {2, 1, 5, 8, 4};
   std::vector<int> vec_test2 (arr_test2, arr_test2 + sizeof(arr_test2) / sizeof(arr_test2[0]) );
   std::cout << "Test 1: 2 1 5 8 4\n";
-  int result2 = subMaxSubset(vec_test2);
+  int result2 = maxSubsetSum(vec_test2);
   std::cout << "Expected Result: 11\n";
   std::cout << "Actual Result: " << result2;
 
@@ -112,14 +43,14 @@ void test1() {
   static const int arr_test3[] = {3, 5, -7, 8, 10};
   std::vector<int> vec_test3 (arr_test3, arr_test3 + sizeof(arr_test3) / sizeof(arr_test3[0]) );
   std::cout << "Test 1: 3 5 -7 8 10\n";
-  int result3 = subMaxSubset(vec_test3);
+  int result3 = maxSubsetSum(vec_test3);
   std::cout << "Expected Result: 15\n";
   std::cout << "Actual Result: " << result3;
 }
 
 int main()
 {
-  test1();
+  test2();
     // ofstream fout(getenv("OUTPUT_PATH"));
     //
     // int n;
