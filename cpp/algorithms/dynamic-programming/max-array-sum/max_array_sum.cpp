@@ -20,28 +20,32 @@ int subMaxSubset(vector<int> arr) {
 
   while (true) {
     sum += arr[index];
-    if (index + jumps[index] < arr.size() - 1) {
+    if ((index + jumps[index]) < arr.size()) {
 
       index += jumps[index];
       adds++;
 
-      if (jumps[index] >= jumps[increment_index]) {
+      if (jumps[index] <= jumps[increment_index]) {
+        // std::cout << "index was incremented";
         increment_index = index;
       }
-
+      // std::cout << index;
     } else {
-
+      // std::cout << "made it";
       if (sum > max) {
+        // std::cout << "new max";
         max = sum;
       }
 
-      if ((adds == 1) && (index == 0)) {
+      if ((adds == 0) && (index == 0)) {
         break;
       }
 
       sum = 0;
       index = 0;
       jumps[increment_index]++;
+      // std::cout << jumps[increment_index];
+      // std::cout << adds;
       increment_index = 0;
       adds = 0;
     }
