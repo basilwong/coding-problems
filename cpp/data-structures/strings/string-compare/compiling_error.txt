@@ -1,0 +1,21 @@
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp: In function 'std::__cxx11::string twoStrings(std::__cxx11::string, std::__cxx11::string)':
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:10:17: error: expected ';' before 'in'
+   for (auto& ch in s1) {
+                 ^~
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:10:17: error: 'in' was not declared in this scope
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:10:20: error: expected ';' before 's1'
+   for (auto& ch in s1) {
+                    ^~
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:11:20: error: use of 'ch' before deduction of 'auto'
+     checked.insert(ch);
+                    ^~
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:14:16: error: expected ';' before 'in'
+   for (auto& c in checked) {
+                ^~
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:14:16: error: 'in' was not declared in this scope
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:14:19: error: expected ';' before 'checked'
+   for (auto& c in checked) {
+                   ^~~~~~~
+C:\Users\wongb\Documents\github\hacker-rank\cpp\data-structures\arrays\string-compare\two_strings.cpp:15:18: error: use of 'c' before deduction of 'auto'
+     std::cout << c;
+                  ^
