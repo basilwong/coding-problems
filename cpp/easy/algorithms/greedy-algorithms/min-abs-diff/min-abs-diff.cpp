@@ -4,63 +4,49 @@ using namespace std;
 
 vector<string> split_string(string);
 
+int minimumAbsoluteDifference(std::vector<int> arr) {
 
+  int abs_val;
 
-// Complete the luckBalance function below.
-int luckBalance(int k, vector<vector<int>> contests) {
+  std::sort(arr.begin(), arr.end());
 
-  long luck_sum = 0;
-  std::vector< int > imprtnt;
-  std::vector< int > won;
+  int min = std::abs(arr[0] - arr[1]);
 
-  for (int i = 0; i < contests.size(); i++) {
-    if (contests[i][1] == 1) {
-      imprtnt.push_back(contests[i][0]);
-      if (imprtnt.size() > k) {
-        std::sort(imprtnt.begin(), imprtnt.end());
-        won.push_back(imprtnt[0]);
-        imprtnt.erase(imprtnt.begin());
-      }
-    } else {
-      luck_sum += contests[i][0];
+  for (int i = 1; i < arr.size() - 1; i++) {
+    abs_val = std::abs(arr[i] - arr[i+1]);
+    if (min > abs_val) {
+      min = abs_val;
     }
   }
 
-  for (auto j : imprtnt) {
-    luck_sum += j;
-  }
-  for (auto k : won) {
-    luck_sum -= k;
-  }
-
-  return luck_sum;
+  return min;
 }
+
+
+
 
 int main()
 {
     ofstream fout(getenv("OUTPUT_PATH"));
 
-    string nk_temp;
-    getline(cin, nk_temp);
+    int n;
+    cin >> n;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-    vector<string> nk = split_string(nk_temp);
+    string arr_temp_temp;
+    getline(cin, arr_temp_temp);
 
-    int n = stoi(nk[0]);
+    vector<string> arr_temp = split_string(arr_temp_temp);
 
-    int k = stoi(nk[1]);
+    vector<int> arr(n);
 
-    vector<vector<int>> contests(n);
     for (int i = 0; i < n; i++) {
-        contests[i].resize(2);
+        int arr_item = stoi(arr_temp[i]);
 
-        for (int j = 0; j < 2; j++) {
-            cin >> contests[i][j];
-        }
-
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        arr[i] = arr_item;
     }
 
-    int result = luckBalance(k, contests);
+    int result = minimumAbsoluteDifference(arr);
 
     fout << result << "\n";
 

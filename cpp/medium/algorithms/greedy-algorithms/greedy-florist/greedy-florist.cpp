@@ -4,36 +4,40 @@ using namespace std;
 
 vector<string> split_string(string);
 
+// Complete the getMinimumCost function below.
+int getMinimumCost(int k, vector<int> c) {
+  
+  if (k == 0) {
+    return 0;
+  }
 
+  if (c.empty()) {
+    return 0;
+  }
 
-// Complete the luckBalance function below.
-int luckBalance(int k, vector<vector<int>> contests) {
+  std::sort (c.begin(), c.end());
 
-  long luck_sum = 0;
-  std::vector< int > imprtnt;
-  std::vector< int > won;
+  long flowers_per_person = c.size() / k;
+  long extra = c.size() - (k * flowers_per_person);
 
-  for (int i = 0; i < contests.size(); i++) {
-    if (contests[i][1] == 1) {
-      imprtnt.push_back(contests[i][0]);
-      if (imprtnt.size() > k) {
-        std::sort(imprtnt.begin(), imprtnt.end());
-        won.push_back(imprtnt[0]);
-        imprtnt.erase(imprtnt.begin());
-      }
-    } else {
-      luck_sum += contests[i][0];
+  int sum = 0;
+  for (int i = 0; i < extra; i++) {
+    sum += c[i] * (flowers_per_person + 1);
+  }
+
+  int person_counter = k;
+  for (int i = extra; i < c.size(); i++){
+    
+    sum += c[i] * (flowers_per_person);
+    person_counter -= 1;
+    std::cout << person_counter << "\n";
+
+    if (person_counter == 0) {
+      person_counter = k;
+      flowers_per_person -= 1;
     }
   }
-
-  for (auto j : imprtnt) {
-    luck_sum += j;
-  }
-  for (auto k : won) {
-    luck_sum -= k;
-  }
-
-  return luck_sum;
+  return sum;
 }
 
 int main()
@@ -49,20 +53,22 @@ int main()
 
     int k = stoi(nk[1]);
 
-    vector<vector<int>> contests(n);
+    string c_temp_temp;
+    getline(cin, c_temp_temp);
+
+    vector<string> c_temp = split_string(c_temp_temp);
+
+    vector<int> c(n);
+
     for (int i = 0; i < n; i++) {
-        contests[i].resize(2);
+        int c_item = stoi(c_temp[i]);
 
-        for (int j = 0; j < 2; j++) {
-            cin >> contests[i][j];
-        }
-
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        c[i] = c_item;
     }
 
-    int result = luckBalance(k, contests);
+    int minimumCost = getMinimumCost(k, c);
 
-    fout << result << "\n";
+    fout << minimumCost << "\n";
 
     fout.close();
 
