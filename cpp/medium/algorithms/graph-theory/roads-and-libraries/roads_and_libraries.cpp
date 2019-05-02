@@ -7,33 +7,56 @@ vector<string> split_string(string);
 // Complete the roadsAndLibraries function below.
 long roadsAndLibraries(int n, int c_lib, int c_road, vector<vector<int>> cities) {
 
-  long cost = 0;
-
-  if (c_road > c_lib) {
+  if (c_lib <= c_road) {
     return c_lib * n;
   }
 
-  std::map < int, std::set< int > > map_of_town;
+  long cost = 0;
+  map<int, vector<int>> c;
+  vector<bool> v(n + 1); // cities to visit
 
-  //
+  // Add roads to map
+  for (auto r : cities) {
+      c[r[0]].push_back(r[1]);
+      c[r[1]].push_back(r[0]);
+    }
+
   for (int i = 1; i <= n; i++) {
-    std::set< int > connected;
-    connected.insert(i);
-    map_of_town.insert(std::pair< int , std::set< int > > (i, connected));
+    stack<int> s;
+    int nodes = 0;
+
+    if (!v[city]) {
+      s.push(city);
+      v[city] = true;
+
+      while (!s.empty()) {
+        int visit = s.top();
+        s.pop();
+
+        for (auto connected : c[visit]) {
+          if (!v[connected]) {
+            v[connected] = true;
+            s.push(connected);
+            nodes++;
+          }
+        }
+      }
+      result += (nodes) ? long(nodes) * c_road + c_lib : c_lib;
+    }
+  }
+}
   }
 
-  for (int j = 0; j < cities.size(); j++) {
-    map_of_town[cities[j][0]].insert(cities[j][1]);
-    map_of_town[cities[j][0]].insert(map_of_town[cities[j][1]].begin(), map_of_town[cities[j][1]].end());
-    map_of_town.erase(cities[j][1]);
+
   }
 
-  for (auto k : map_of_town) {
+  if (!visited.empty()) {
+    cost += (visited.size() - 1) * c_road;
     cost += c_lib;
-    cost += (k.second.size() - 1) * c_road;
+    logged.insert(visited.begin(), visited.end());
   }
 
-  std::cout << "\n\n" << cost << "\n\n";
+  cost += (n - logged.size()) * c_lib;
 
   return cost;
 }
