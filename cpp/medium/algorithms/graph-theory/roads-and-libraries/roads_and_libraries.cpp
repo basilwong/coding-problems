@@ -41,7 +41,7 @@ long roadsAndLibraries(int n, int c_lib, int c_road, vector<vector<int>> cities)
           }
         }
       }
-      result += (nodes) ? long(nodes) * c_road + c_lib : c_lib;
+      cost += (nodes) ? long(nodes) * c_road + c_lib : c_lib;
     }
   }
 }
