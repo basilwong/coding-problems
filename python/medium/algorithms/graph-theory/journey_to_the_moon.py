@@ -22,16 +22,18 @@ def journeyToMoon(n, astronaut):
     # Visited set 
     visited = set()
 
-    # Number of possible pairs
-    sum = 0
+    # Number of non-pairs
+    non_pairs = 0
 
     for i in range(n):
         if i not in visited:
             visited.add(i)
             visited.update(pairs[i])
-            sum += (len(pairs[i]) + 1) * (n - len(pairs[i]) - 1)
+            non_pairs += (len(pairs[i]) + 1) * (len(pairs[i])) / 2
 
-    return int(sum / 2)
+    ret = (n*(n-1) / 2) - non_pairs
+
+    return int(ret)
 
 
 
