@@ -7,14 +7,20 @@ import re
 import sys
 import collections
 
-# Complete the shortestReach function below.
-def shortestReach(n, edges, s):
 
+# Solution for unoptimized input
+def convert_to_graph(n, edges):
     graph = [set() for _ in range(n)]
     for e in edges:
         graph[e[0] - 1].add((e[1] - 1, e[2]))
         graph[e[1] - 1].add((e[0] - 1, e[2]))
 
+    return graph
+
+
+def shortestReach(n, edges, s):
+
+    graph = convert_to_graph
     lengths = [-1] * n
     lengths[s - 1] = 0
 
