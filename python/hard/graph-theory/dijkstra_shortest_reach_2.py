@@ -25,7 +25,7 @@ def shortestReach(n, edges, s):
         cur = queue.popleft()
         for tup in graph[cur]:
             if lengths[tup[0]] == -1:
-                lengths[tup[0]] = tup[1]
+                lengths[tup[0]] = lengths[cur] + tup[1]
                 queue.append(tup[0])
             elif lengths[tup[0]] >= lengths[cur] + tup[1]:
                 lengths[tup[0]] = lengths[cur] + tup[1]
