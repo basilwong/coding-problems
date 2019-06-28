@@ -40,6 +40,56 @@ def shortestReach(n, edges, s):
     del lengths[s - 1]
     return lengths
 
+# Solution for optimized input
+def main_optimized_input():
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        nm = input().split()
+
+        n = int(nm[0])
+
+        m = int(nm[1])
+
+        edges = [set() for _ in range(n)]
+
+        for _ in range(m):
+            e = list(map(int, input().rstrip().split()))
+            edges[e[0] - 1].add((e[1] - 1, e[2]))
+            edges[e[1] - 1].add((e[0] - 1, e[2]))
+
+        s = int(input())
+
+        result = shortestReach_2(n, edges, s)
+
+        fptr.write(' '.join(map(str, result)))
+        fptr.write('\n')
+
+    fptr.close()
+
+
+def shortestReach_2(n, graph, s):
+
+    lengths = [-1] * n
+    lengths[s - 1] = 0
+
+    queue = collections.deque()
+    queue.append(s - 1)
+
+    while queue:
+        cur = queue.popleft()
+        for tup in graph[cur]:
+            if lengths[tup[0]] == -1:
+                lengths[tup[0]] = lengths[cur] + tup[1]
+                queue.append(tup[0])
+            elif lengths[tup[0]] >= lengths[cur] + tup[1]:
+                lengths[tup[0]] = lengths[cur] + tup[1]
+                queue.append(tup[0])
+
+    del lengths[s - 1]
+    return lengths
 
 class TestStringMethods(unittest.TestCase):
 
@@ -78,6 +128,9 @@ class TestStringMethods(unittest.TestCase):
         a_output = list(map(int, out_str))
         #Check
         self.assertEqual(shortestReach(int(n[0]), graph, start), a_output)
+
+
+
 
 
 if __name__ == '__main__':
