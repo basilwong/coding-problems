@@ -1,3 +1,10 @@
+"""
+Time complexity of O(n * m)
+Space complexity of O(n). Still could have been faster and less memory:
+https://codingcompetitions.withgoogle.com/kickstart/round/000000000019ffc8/00000000002d8565
+
+"""
+
 def in_hole(x, y, l, u, r, d):
     return (x + 1 >= l and x + 1 <= r) and (y + 1 >= u and y + 1 <= d)
 
